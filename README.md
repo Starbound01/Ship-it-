@@ -1,2 +1,2 @@
 # Ship-it-
-ship it milestone repo
+ship it milestone 1 repo
