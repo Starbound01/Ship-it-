@@ -17,6 +17,8 @@ jobs:
           echo "Build step placeholder: nothing to compile yet."
           mkdir -p build
           echo "Build completed at $(date)" > build/build.txt
+          echo "ok" > build/expected.txt
+
 
       - name: Test step
         run: |
