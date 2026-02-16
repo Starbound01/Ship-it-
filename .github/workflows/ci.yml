@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build step
+        run: |
+          echo "Build step placeholder: nothing to compile yet."
+          mkdir -p build
+          echo "Build completed at $(date)" > build/build.txt
+
+      - name: Test step
+        run: |
+          chmod +x scripts/test.sh
+          ./scripts/test.sh
