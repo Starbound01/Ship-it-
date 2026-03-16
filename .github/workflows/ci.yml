@@ -5,22 +5,12 @@ on:
   pull_request:
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
+  artifacts-check:
+    runs-on: windows-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build step
-        run: |
-          echo "Build step placeholder: nothing to compile yet."
-          mkdir -p build
-          echo "Build completed at $(date)" > build/build.txt
-          echo "ok" > build/expected.txt
-
-
-      - name: Test step
-        run: |
-          chmod +x scripts/test.sh
-          ./scripts/test.sh
+      - name: Run artifacts check
+        run: scripts\check_artifacts.cmd
